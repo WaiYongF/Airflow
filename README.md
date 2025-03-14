@@ -63,7 +63,7 @@ docker-compose up -d --no-deps --build postgres
 3. Download Dbeaver and create a new file.
 <picture width="500">
   <img
-    src="https://github.com/apache/airflow/blob/19ebcac2395ef9a6b6ded3a2faa29dc960c1e635/docs/apache-airflow/img/logos/wordmark_1.png?raw=true"
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/image.png"
     alt="Selection of Postgres Connection in Dbeaver"
   />
 </picture>
