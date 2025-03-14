@@ -39,7 +39,34 @@ Use Airflow to author workflows as directed acyclic graphs (DAGs) of tasks. The 
 
 ## Airflow Scheduler with Cron Expression  
 
-## Airflow Connection to Postgres  
+## Airflow Connection to Postgres
+1. Add on in docker-compose.yaml
+```bash
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+```
+2. Run the code
+```bash
+docker-compose up -d --no-deps --build postgres
+```
+3. Download Dbeaver and create a new file.
+<picture width="500">
+  <img
+    src="https://github.com/apache/airflow/blob/19ebcac2395ef9a6b6ded3a2faa29dc960c1e635/docs/apache-airflow/img/logos/wordmark_1.png?raw=true"
+    alt="Selection of Postgres Connection in Dbeaver"
+  />
+</picture>
 
 ## Airflow Postgres Operator  
 
