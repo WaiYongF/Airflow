@@ -25,8 +25,29 @@ Use Airflow to author workflows as directed acyclic graphs (DAGs) of tasks. The 
 - [Airflow Postgres Operator](#Airflow-Postgres-Operator)  
 - [Airflow Docker Install Python Package](#Airflow-Docker-Install-Python-Package)  
 - [Airflow AWS S3 Sensor Operator](#Airflow-AWS-S3-Sensor-Operator)  
-- [Airflow Hooks S3 PostgreSQL](#Airflow-Hooks-S3-PostgreSQL) 
+- [Airflow Hooks S3 PostgreSQL](#Airflow-Hooks-S3-PostgreSQL)  
 
-## Airflow DAG with Bash Operator
+## Airflow DAG with Bash Operator  
+
+## Airflow DAG with Python Operator  
+
+## Data Sharing via Airflow XComs  
+
+## Airflow Task Flow API  
+
+## Airflow Catch-Up and Backfill  
+
+## Airflow Scheduler with Cron Expression  
+
+## Airflow Connection to Postgres  
+
+## Airflow Postgres Operator  
+
+## Airflow Docker Install Python Package  
+
+## Airflow AWS S3 Sensor Operator  
+
+## Airflow Hooks S3 PostgreSQL  
+
 
 
