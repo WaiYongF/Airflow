@@ -68,6 +68,12 @@ docker-compose up -d --no-deps --build postgres
   />
 </picture>
 
+<picture width="100">
+  <img
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20Connection%20to%20Postgres/image.png"
+    alt="Selection of Postgres Connection in Dbeaver"
+  />
+</picture>
 ## Airflow Postgres Operator  
 
 ## Airflow Docker Install Python Package  
