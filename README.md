@@ -63,11 +63,18 @@ docker-compose up -d --no-deps --build postgres
 3. Download Dbeaver and create a new file. **Username** and **Password** can be found in `docker-compose.yaml`
 <picture width="100">
   <img
-    src="https://github.com/WaiYongF/Airflow/blob/main/Images/image.png"
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20Connection%20to%20Postgres/Image_1.png"
     alt="Selection of Postgres Connection in Dbeaver"
   />
 </picture>
 
+
+<picture width="100">
+  <img
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20Connection%20to%20Postgres/dbeaver.PNG"
+    alt="Selection of Postgres Connection in Dbeaver"
+  />
+</picture>
 
 <picture width="100">
   <img
