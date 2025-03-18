@@ -78,7 +78,7 @@ docker-compose up -d --no-deps --build postgres
 
 <picture width="100">
   <img
-    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20Connection%20to%20Postgres/image.png"
+    src="https://github.com/WaiYongF/Airflow/blob/cf6f4af97d0d7db29b75151a28910245bfb4e911/Images/Airflow%20Connection%20to%20Postgres/image.png"
     alt="Selection of Postgres Connection in Dbeaver"
   />
 </picture>
