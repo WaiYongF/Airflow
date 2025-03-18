@@ -76,12 +76,20 @@ docker-compose up -d --no-deps --build postgres
   />
 </picture>
 
+In Airflow, Admin -> Connection
+
 <picture width="100">
   <img
     src="https://github.com/WaiYongF/Airflow/blob/cf6f4af97d0d7db29b75151a28910245bfb4e911/Images/Airflow%20Connection%20to%20Postgres/image.png"
     alt="Selection of Postgres Connection in Dbeaver"
   />
 </picture>
+
+Check out the code in the file `dag_with_postgres_operator.py`.
+
+sequence of task in code: `task1 >> task3 >> task2`
+
+Why need task3? **If we try to delete one of the successful insert task, it tries to insert data which is already exists in the table. In the end, it will fail since violate the primary key constraint. Delete before insert can solve this issue.**
 
 ## Airflow Postgres Operator  
 
