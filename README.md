@@ -1,4 +1,4 @@
-# Apache Airflow
+![image](https://github.com/user-attachments/assets/bc0996bd-922e-4d93-ac5f-d70efc980b0d)# Apache Airflow
 
 <picture width="500">
   <img
@@ -113,6 +113,69 @@ docker-compose up -d --no-deps --build postgres
 ## Airflow Docker Install Python Package  
 
 ## Airflow AWS S3 Sensor Operator  
+1. Create a new terminal in Visual Studio (shortcut: CTRL + SHIFT + `)
+
+2. Run the code in Docker(Rootfull) in the link
+
+https://min.io/docs/minio/container/index.html
+
+### PowerShell (for Windows)
+
+```
+docker run --name minio1 -p 9000:9000 -p 9001:9001 `
+    -v D:\minio\data:/data `
+    -e "MINIO_ROOT_USER=ROOTUSER" `
+    -e "MINIO_ROOT_PASSWORD=CHANGEME123" `
+    quay.io/minio/minio server /data --console-address ":9001"
+```
+3. Login MinIO and create a new bucket
+
+Name: airflow
+Access: R/W
+
+4. Create new data `data.csv` in data folder
+
+5. Upload the `data.csv` to the `airflow` bucket in MinIO
+
+6. Create a new dag `dag_with_minio_s3.py` and write the code
+
+7. Verify the installed package
+
+`docker ps`
+
+Copy the container ID in the image `extending_airflow:latest`
+`docker exec -it 1e4f53518d94 bash  `
+
+`pip list | grep apache-airflow-providers-amazon`
+
+8. Follow the version of amazon, go to the website and search for python API
+
+https://airflow.apache.org/docs/apache-airflow-providers-amazon/9.2.0/index.html
+
+Search for `airflow.providers.amazon.aws.sensors.s3`
+
+Add on 
+```
+from airflow.providers.amazon.aws.sensors import s3S3KeySensor
+```
+
+9. Create new connection for minIO in airflow
+
+<picture width="100">
+  <img
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20AWS%20S3%20Sensor%20Operator/airflow_minio_conn.PNG"
+    alt="Selection of Postgres Connection in Dbeaver"
+  />
+</picture>
+
+```
+{
+  "endpoint_url": "http://host.docker.internal:9000",
+  "region_name": "us-east-1"
+}
+```
+
+**Make sure the `conn_id` in `dag_with_minio_s3.py` is same with the `conn_id` in the connection of airflow**
 
 ## Airflow Hooks S3 PostgreSQL  
 
