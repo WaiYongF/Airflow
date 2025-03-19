@@ -40,7 +40,19 @@ Use Airflow to author workflows as directed acyclic graphs (DAGs) of tasks. The 
 ## Airflow Scheduler with Cron Expression  
 
 ## Airflow Connection to Postgres
-1. Add on in docker-compose.yaml
+package requirement:
+
+**python==5.10.10**
+
+**apache-airflow-providers-postgres==5.1.0**
+1. Add on in docker-compose.yaml and write code in the file `dag_with_postgres_operator.py`
+
+Check out the code in the file `dag_with_postgres_operator.py`.
+
+sequence of task in code: `task1 >> task3 >> task2`
+
+Why need task3? **If we try to delete one of the successful insert task, it tries to insert data which is already exists in the table. In the end, it will fail since violate the primary key constraint. Delete before insert can solve this issue.**
+
 ```bash
 services:
   postgres:
@@ -56,7 +68,7 @@ services:
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
 ```
-2. Run the code
+2. Run the code in powershell in Visual Studio
 ```bash
 docker-compose up -d --no-deps --build postgres
 ```
@@ -76,7 +88,7 @@ docker-compose up -d --no-deps --build postgres
   />
 </picture>
 
-In Airflow, Admin -> Connection
+4. In Airflow, Admin -> Connection
 
 <picture width="100">
   <img
@@ -85,11 +97,14 @@ In Airflow, Admin -> Connection
   />
 </picture>
 
-Check out the code in the file `dag_with_postgres_operator.py`.
+5. Write PostgreSQL in dbeaver script
 
-sequence of task in code: `task1 >> task3 >> task2`
-
-Why need task3? **If we try to delete one of the successful insert task, it tries to insert data which is already exists in the table. In the end, it will fail since violate the primary key constraint. Delete before insert can solve this issue.**
+<picture width="100">
+  <img
+    src="https://github.com/WaiYongF/Airflow/blob/main/Images/Airflow%20Connection%20to%20Postgres/dbeaver_sql.PNG"
+    alt="Selection of Postgres Connection in Dbeaver"
+  />
+</picture>
 
 ## Airflow Postgres Operator  
 
