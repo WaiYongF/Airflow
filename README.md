@@ -40,6 +40,10 @@ Use Airflow to author workflows as directed acyclic graphs (DAGs) of tasks. The 
 ## Airflow Scheduler with Cron Expression  
 
 ## Airflow Connection to Postgres
+It's linking with the section Airflow Postgres Operator
+
+## Airflow Postgres Operator  
+
 package requirement:
 
 **python==5.10.10**
@@ -105,8 +109,6 @@ docker-compose up -d --no-deps --build postgres
     alt="Selection of Postgres Connection in Dbeaver"
   />
 </picture>
-
-## Airflow Postgres Operator  
 
 ## Airflow Docker Install Python Package  
 
