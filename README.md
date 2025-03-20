@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bc0996bd-922e-4d93-ac5f-d70efc980b0d)# Apache Airflow
+# Apache Airflow
 
 <picture width="500">
   <img
