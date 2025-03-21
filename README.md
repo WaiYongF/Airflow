@@ -13,6 +13,44 @@ When workflows are defined as code, they become more maintainable, versionable, 
 
 Use Airflow to author workflows as directed acyclic graphs (DAGs) of tasks. The Airflow scheduler executes your tasks on an array of workers while following the specified dependencies. Rich command line utilities make performing complex surgeries on DAGs a snap. The rich user interface makes it easy to visualize pipelines running in production, monitor progress, and troubleshoot issues when needed.
 
+## Installation Guide of Airflow in Docker
+
+1. 
+
+https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+
+Fetching `docker-compose.yaml` -> Edit after fetching
+
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.10.5/docker-compose.yaml'
+```
+
+```
+mkdir .\dags
+mkdir .\logs
+mkdir .\plugins
+mkdir .\config
+```
+
+```
+$env:AIRFLOW_UID = "50000"
+```
+
+Run the airflow
+
+```
+docker compose up airflow-init
+docker compose up -d
+```
+
+******If there are example dags in airflow***
+
+```
+docker compose down -v
+```
+Change `AIRFLOW__CORE__LOAD_EXAMPLES: 'true'` to `AIRFLOW__CORE__LOAD_EXAMPLES: 'false'` in `docker-compose.yaml`
+
+
 **Table of contents**
 
 - [Airflow DAG with Bash Operator](#Airflow-DAG-with-Bash-Operator)  
